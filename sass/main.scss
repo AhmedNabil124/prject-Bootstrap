@@ -1,0 +1,167 @@
+@import "./varaibels";
+body {
+  font-family: cursive;
+}
+// utilties
+.bg-section{
+  background-color: #f6f9fe;
+}
+  .title-before{
+    background: #a7f1fd;
+
+}
+
+.nav-link {
+  position: relative;
+  transition: 0.3s;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: $blue;
+    transition: inherit;
+  }
+  &.active,
+  &:hover {
+    color: $blue;
+    &::before {
+      width: 100%;
+    }
+  }
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+#header {
+  height: 75vh;
+  background-image: url(../images/hero-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparentize(#fff, 0.3);
+  }
+}
+#staticBackdrop {
+  object {
+    height: 80vh;
+  }
+  &.fade .modal-dialog {
+    transition: transform 0.5s ease-out;
+    transform: scale(0);
+  }
+
+  &.show .modal-dialog {
+    transform: none;
+  }
+}
+.icon-container{
+  width: 70px;
+  height: 70px;
+}
+.progress-bar{
+  transition: 0.3s;
+}
+.icon{
+  width: 60px;
+  height: 60px;
+}
+
+.icon-box
+{
+  .card-overlay{
+    inset: 0;
+  }
+  &>*{
+    position: relative;
+    transition: 0.5s;
+  }
+  &:hover{
+    .card-overlay{
+      top: 0 !important;
+    }
+    >*{
+      color: #fff !important;
+    }
+  }
+}
+
+.silder-div{
+  background-image: url(../images/testimonials-bg.jpg) ;
+  background-position: center center;
+  background-size: cover;
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: transparentize($color: #000000, $amount: 0.3);
+  }
+  #carouselExampleCaptions{
+    height: 350px;
+  }
+  .carousel-item img{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+li{
+  cursor: pointer;
+}
+.filterd-items
+{
+  >a{
+    height: 350px;
+    &.hidden{
+      display: none;
+    }
+    &.active{
+      animation: 0.7s show ease-in-out;
+    }
+   
+    img{
+      object-fit: contain;
+    }
+  }
+}
+
+@keyframes show {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+// contact
+#contact i{
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border: 1px dashed;
+}
+
+.footer-list li{
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    border: 5px solid transparent;
+    border-left-color: $blue;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+a{
+  text-decoration: none;
+}
+section{
+  overflow-x: hidden;
+}
